@@ -96,6 +96,7 @@ class ViewController: UIViewController {
             if results.0 == true
             {
                 handleWin(results)
+                return
             }
             p1Turn = false
             player.text = "Player 2"
@@ -118,6 +119,7 @@ class ViewController: UIViewController {
                 if results.0 == true
                 {
                     handleWin(results)
+                    return
                 }
                 p1Turn = true
                 player.text = "Player 1"
@@ -141,6 +143,7 @@ class ViewController: UIViewController {
         self.resetBackgroundImages()
         self.player.text = "Player 1"
         self.p1Turn = true
+        self.imageView.image = UIImage(named: "red.png")
     }
     
     
