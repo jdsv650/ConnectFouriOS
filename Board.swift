@@ -44,12 +44,17 @@ class Board
         return Static.instance
     }
     
-    private var theBoard : [[Slot]] = [[.None, .None, .None, .None, .None, .None, .None],
-                                       [.None, .None, .None, .None, .None, .None, .None],
-                                       [.None, .None, .None, .None, .None, .None, .None],
-                                       [.None, .None, .None, .None, .None, .None, .None],
-                                       [.None, .None, .None, .None, .None, .None, .None],
-                                       [.None, .None, .None, .None, .None, .None, .None]]
+    private var theBoard : [[Slot]] = [[.None, .None, .None, .None, .None, .None, .None]]
+    
+    
+    private init()
+    {
+        theBoard.append( [.None, .None, .None, .None, .None, .None, .None] )
+        theBoard.append( [.None, .None, .None, .None, .None, .None, .None] )
+        theBoard.append( [.None, .None, .None, .None, .None, .None, .None] )
+        theBoard.append( [.None, .None, .None, .None, .None, .None, .None] )
+        theBoard.append( [.None, .None, .None, .None, .None, .None, .None] )
+    }
     
     func dropToken(#atRow: Int, andCol: Int, withSlotType: Slot) -> Bool
     {
@@ -138,6 +143,12 @@ class Board
             {
                 return results
             }
+        }
+        
+       var result = checkDiagonal()
+        if results.0 == true
+        {
+            return results
         }
         
         return (false, [], Slot.None)
