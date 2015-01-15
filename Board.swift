@@ -144,9 +144,85 @@ class Board
     }
     
     
-    func checkDiagonal(row :Int) -> (Bool, [Int], Slot)
+    func checkDiagonal() -> (Bool, [Int], Slot)
     {
-     
+        // 11,12,13,14,15,16,17    (-1 for index)
+        // 21,22,23,23,25,26,27
+        // 31,32,33,34,35,36,37
+        // 41,42,43,44,45,46,47
+        // 51,52,53,54,55,56,57
+        // 61,62,63,64,65,66,67
+        
+        // check black   for //////// direction
+        if theBoard[3][0] == Board.Slot.Black && theBoard[2][1] == Board.Slot.Black
+            && theBoard[1][2] == Board.Slot.Black && theBoard[0][3] == Board.Slot.Black
+        {
+            return (true, [41,32,23,12], Slot.Black)
+        } else if theBoard[4][0] == Board.Slot.Black && theBoard[3][1] == Board.Slot.Black
+            && theBoard[2][2] == Board.Slot.Black && theBoard[1][3] == Board.Slot.Black
+        {
+            return (true, [51,42,33,24], Slot.Black)
+        }
+        else if theBoard[5][0] == Board.Slot.Black && theBoard[4][1] == Board.Slot.Black
+            && theBoard[3][2] == Board.Slot.Black && theBoard[2][3] == Board.Slot.Black
+        {
+            return (true, [61,52,43,34], Slot.Black)
+        }
+        else if theBoard[3][1] == Board.Slot.Black && theBoard[2][2] == Board.Slot.Black
+            && theBoard[1][3] == Board.Slot.Black && theBoard[0][4] == Board.Slot.Black
+        {
+            return (true, [42,33,24,15], Slot.Black)
+        }
+        
+        
+        else if theBoard[4][1] == Board.Slot.Black && theBoard[3][2] == Board.Slot.Black
+            && theBoard[2][3] == Board.Slot.Black && theBoard[1][4] == Board.Slot.Black
+        {
+            return (true, [52,43,34,25], Slot.Black)
+        } else if theBoard[5][1] == Board.Slot.Black && theBoard[4][2] == Board.Slot.Black
+            && theBoard[3][3] == Board.Slot.Black && theBoard[2][4] == Board.Slot.Black
+        {
+            return (true, [62,53,44,35], Slot.Black)
+        }
+        else if theBoard[3][2] == Board.Slot.Black && theBoard[2][3] == Board.Slot.Black
+            && theBoard[1][4] == Board.Slot.Black && theBoard[0][5] == Board.Slot.Black
+        {
+            return (true, [43,34,25,16], Slot.Black)
+        }
+        else if theBoard[4][2] == Board.Slot.Black && theBoard[3][3] == Board.Slot.Black
+            && theBoard[2][4] == Board.Slot.Black && theBoard[1][5] == Board.Slot.Black
+        {
+            return (true, [53,44,35,26], Slot.Black)
+        }
+        
+        else if theBoard[5][2] == Board.Slot.Black && theBoard[4][3] == Board.Slot.Black
+            && theBoard[3][4] == Board.Slot.Black && theBoard[2][5] == Board.Slot.Black
+        {
+            return (true, [63,54,45,36], Slot.Black)
+        } else if theBoard[3][3] == Board.Slot.Black && theBoard[2][4] == Board.Slot.Black
+            && theBoard[1][5] == Board.Slot.Black && theBoard[0][6] == Board.Slot.Black
+        {
+            return (true, [44,35,26,17], Slot.Black)
+        }
+        else if theBoard[4][3] == Board.Slot.Black && theBoard[3][4] == Board.Slot.Black
+            && theBoard[2][5] == Board.Slot.Black && theBoard[1][6] == Board.Slot.Black
+        {
+            return (true, [54,45,36,27], Slot.Black)
+        }
+        else if theBoard[5][3] == Board.Slot.Black && theBoard[4][4] == Board.Slot.Black
+            && theBoard[3][5] == Board.Slot.Black && theBoard[2][6] == Board.Slot.Black
+        {
+            return (true, [64,55,46,37], Slot.Black)
+        }
+        
+        // black for \\\\\\\\\\\\
+        
+        
+        
+        
+        
+        
+        
         
         return (false, [], Slot.None)
     }
