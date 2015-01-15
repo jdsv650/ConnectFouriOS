@@ -122,17 +122,31 @@ class Board
         // 51,52,53,54,55,56,57
         // 61,62,63,64,65,66,67
         
-        for i in 0...5
+        for i in 0...5  // 6 rows
         {
             var results = checkHorizontal(i)
             if results.0 == true
             {
                 return results
             }
-            
         }
         
+        for i in 0...6  // 7 cols
+        {
+            var results = checkVertical(i)
+            if results.0 == true
+            {
+                return results
+            }
+        }
         
+        return (false, [], Slot.None)
+    }
+    
+    
+    func checkDiagonal(row :Int) -> (Bool, [Int], Slot)
+    {
+     
         
         return (false, [], Slot.None)
     }
@@ -181,12 +195,48 @@ class Board
             return (true, [3,4,5,6], Slot.Red)
         }
         
-        
         return (false, [], Slot.None)
     }
     
     
     
+    func checkVertical(col :Int) -> (Bool, [Int], Slot)
+    {
+        // check black
+        if theBoard[0][col] == Board.Slot.Black && theBoard[1][col] == Board.Slot.Black
+            && theBoard[2][col] == Board.Slot.Black && theBoard[3][col] == Board.Slot.Black
+        {
+            return (true, [0,1,2,3], Slot.Black)
+        } else if theBoard[1][col] == Board.Slot.Black && theBoard[2][col] == Board.Slot.Black
+            && theBoard[3][col] == Board.Slot.Black && theBoard[4][col] == Board.Slot.Black
+        {
+            return (true, [1,2,3,4], Slot.Black)
+        }
+        else if theBoard[2][col] == Board.Slot.Black && theBoard[3][col] == Board.Slot.Black
+            && theBoard[4][col] == Board.Slot.Black && theBoard[5][col] == Board.Slot.Black
+        {
+            return (true, [2,3,4,5], Slot.Black)
+        }
+       
+        
+        // copy paste for red
+        if theBoard[0][col] == Board.Slot.Red && theBoard[1][col] == Board.Slot.Red
+            && theBoard[2][col] == Board.Slot.Red && theBoard[3][col] == Board.Slot.Red
+        {
+            return (true, [0,1,2,3], Slot.Red)
+        } else if theBoard[1][col] == Board.Slot.Red && theBoard[2][col] == Board.Slot.Red
+            && theBoard[3][col] == Board.Slot.Red && theBoard[4][col] == Board.Slot.Red
+        {
+            return (true, [1,2,3,4], Slot.Red)
+        }
+        else if theBoard[2][col] == Board.Slot.Red && theBoard[3][col] == Board.Slot.Red
+            && theBoard[4][col] == Board.Slot.Red && theBoard[5][col] == Board.Slot.Red
+        {
+            return (true, [2,3,4,5], Slot.Red)
+        }
+    
+        return (false, [], Slot.None)
+    }
     
     
     func isFull() -> Bool
