@@ -14,7 +14,6 @@
 		1A8BE90D1A677CD100AD7E43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8BE90B1A677CD100AD7E43 /* LaunchScreen.xib */; };
 		1A8BE9191A677CD200AD7E43 /* testAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BE9181A677CD200AD7E43 /* testAppTests.swift */; };
 		1A8BE9231A68118100AD7E43 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BE9221A68118100AD7E43 /* Board.swift */; };
-		1A8BE9251A681CDF00AD7E43 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BE9241A681CDF00AD7E43 /* Game.swift */; };
 		1A8BE9271A681D9800AD7E43 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8BE9261A681D9800AD7E43 /* Player.swift */; };
 		1A8BE92B1A68256C00AD7E43 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8BE9281A68256C00AD7E43 /* white.png */; };
 		1A8BE92C1A68256C00AD7E43 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8BE9291A68256C00AD7E43 /* red.png */; };
@@ -43,7 +42,6 @@
 		1A8BE9171A677CD200AD7E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8BE9181A677CD200AD7E43 /* testAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAppTests.swift; sourceTree = "<group>"; };
 		1A8BE9221A68118100AD7E43 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		1A8BE9241A681CDF00AD7E43 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1A8BE9261A681D9800AD7E43 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		1A8BE9281A68256C00AD7E43 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = ../white.png; sourceTree = "<group>"; };
 		1A8BE9291A68256C00AD7E43 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = ../red.png; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			children = (
 				1A8BE9261A681D9800AD7E43 /* Player.swift */,
 				1A8BE9221A68118100AD7E43 /* Board.swift */,
-				1A8BE9241A681CDF00AD7E43 /* Game.swift */,
 				1A8BE8FF1A677CD100AD7E43 /* testApp */,
 				1A8BE9151A677CD200AD7E43 /* testAppTests */,
 				1A8BE8FE1A677CD100AD7E43 /* Products */,
@@ -237,7 +234,6 @@
 				1A8BE9031A677CD100AD7E43 /* AppDelegate.swift in Sources */,
 				1A8BE9231A68118100AD7E43 /* Board.swift in Sources */,
 				1A8BE9271A681D9800AD7E43 /* Player.swift in Sources */,
-				1A8BE9251A681CDF00AD7E43 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +425,7 @@
 				1A8BE91E1A677CD200AD7E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A8BE91F1A677CD200AD7E43 /* Build configuration list for PBXNativeTarget "testAppTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +434,7 @@
 				1A8BE9211A677CD200AD7E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -400,11 +400,15 @@
                                     <action selector="buttonPressed:" destination="1SQ-H4-Lyw" eventType="touchUpInside" id="QJ8-ZH-QT3"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red.png" translatesAutoresizingMaskIntoConstraints="NO" id="OHr-O8-7yn">
+                                <rect key="frame" x="423" y="58" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="imageView" destination="OHr-O8-7yn" id="qLG-NV-8zv"/>
                         <outlet property="loc0_0" destination="YFn-0w-vXl" id="E9M-Dr-n70"/>
                         <outlet property="loc0_1" destination="5b4-tr-KXP" id="Nmy-va-pVx"/>
                         <outlet property="loc0_2" destination="YhK-je-z2K" id="U62-68-lPK"/>
@@ -456,6 +460,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="red.png" width="40" height="40"/>
         <image name="white.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

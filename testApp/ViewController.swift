@@ -17,6 +17,9 @@ class ViewController: UIViewController {
 
   
     @IBOutlet weak var player: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var winnerLabel: UILabel!
+    
     
     @IBOutlet weak var loc0_0: UIButton!
     @IBOutlet weak var loc0_1: UIButton!
@@ -78,14 +81,17 @@ class ViewController: UIViewController {
         // 51,52,53,54,55,56,57
         // 61,62,63,64,65,66,67
         
-       // sender.backgroundImageForState(UIControlState.Normal)
-        
-        
         if p1Turn == true
         {
           if theBoard.dropTokenAtSlotWithTagNumber(number: sender.tag, withSlotType: Board.Slot.Red)
           {
             sender.setBackgroundImage(UIImage(named: "red.png"), forState: UIControlState.Normal)
+            
+            if theBoard.isFull()
+            {
+                self.handelTie()
+            }
+            
             var results = theBoard.checkWin()
             if results.0 == true
             {
@@ -93,6 +99,7 @@ class ViewController: UIViewController {
             }
             p1Turn = false
             player.text = "Player 2"
+            imageView.image = UIImage(named: "black.png")
            }
        
         }
@@ -101,6 +108,12 @@ class ViewController: UIViewController {
             if theBoard.dropTokenAtSlotWithTagNumber(number: sender.tag, withSlotType: Board.Slot.Black)
             {
                 sender.setBackgroundImage(UIImage(named: "black.png"), forState: UIControlState.Normal)
+                
+                if theBoard.isFull()
+                {
+                    self.handelTie()
+                }
+                
                 var results = theBoard.checkWin()
                 if results.0 == true
                 {
@@ -108,11 +121,34 @@ class ViewController: UIViewController {
                 }
                 p1Turn = true
                 player.text = "Player 1"
+                imageView.image = UIImage(named: "red.png")
+
             }
 
         }
         
     }
+    
+    func handelTie()
+    {
+        resetGame()
+    }
+    
+    
+    func resetGame()
+    {
+        self.theBoard.clear()
+        self.resetBackgroundImages()
+        self.player.text = "Player 1"
+        self.p1Turn = true
+    }
+    
+    
+    @IBAction func resetPressed(sender: AnyObject) {
+        
+    }
+    
+    
 
     func handleWin(t:(didWin: Bool, atPositions: [Int], withSlotColor: Board.Slot))
     {
@@ -128,11 +164,9 @@ class ViewController: UIViewController {
         }
         
         var alertVC = UIAlertController(title: "Winner", message: "\(player) wins!", preferredStyle: UIAlertControllerStyle.ActionSheet)
-      //  var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        
         var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
-            self.theBoard.clear()
-            self.resetBackgroundImages()
-            self.player.text = "Player 1"
+            self.resetGame()
         }
         
         alertVC.addAction(action)

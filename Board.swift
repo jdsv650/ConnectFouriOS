@@ -145,7 +145,7 @@ class Board
             }
         }
         
-       var result = checkDiagonal()
+       var results = checkDiagonal()
         if results.0 == true
         {
             return results
