@@ -174,7 +174,6 @@ class Board
             return (true, [42,33,24,15], Slot.Black)
         }
         
-        
         else if theBoard[4][1] == Board.Slot.Black && theBoard[3][2] == Board.Slot.Black
             && theBoard[2][3] == Board.Slot.Black && theBoard[1][4] == Board.Slot.Black
         {
@@ -217,12 +216,189 @@ class Board
         
         // black for \\\\\\\\\\\\
         
+        if theBoard[0][3] == Board.Slot.Black && theBoard[1][4] == Board.Slot.Black
+            && theBoard[2][5] == Board.Slot.Black && theBoard[3][6] == Board.Slot.Black
+        {
+            return (true, [14,25,36,47], Slot.Black)
+        } else if theBoard[1][3] == Board.Slot.Black && theBoard[2][4] == Board.Slot.Black
+            && theBoard[3][5] == Board.Slot.Black && theBoard[4][6] == Board.Slot.Black
+        {
+            return (true, [24,35,46,57], Slot.Black)
+        }
+        else if theBoard[2][3] == Board.Slot.Black && theBoard[3][4] == Board.Slot.Black
+            && theBoard[4][5] == Board.Slot.Black && theBoard[5][6] == Board.Slot.Black
+        {
+            return (true, [34,45,56,67], Slot.Black)
+        }
+        else if theBoard[0][2] == Board.Slot.Black && theBoard[1][3] == Board.Slot.Black
+            && theBoard[2][4] == Board.Slot.Black && theBoard[3][5] == Board.Slot.Black
+        {
+            return (true, [13,24,35,46], Slot.Black)
+        } //
+            
+        else if theBoard[1][2] == Board.Slot.Black && theBoard[2][3] == Board.Slot.Black
+            && theBoard[3][4] == Board.Slot.Black && theBoard[4][5] == Board.Slot.Black
+        {
+            return (true, [23,34,45,56], Slot.Black)
+        } else if theBoard[2][2] == Board.Slot.Black && theBoard[3][3] == Board.Slot.Black
+            && theBoard[4][4] == Board.Slot.Black && theBoard[5][5] == Board.Slot.Black
+        {
+            return (true, [33,44,55,66], Slot.Black)
+        }
+        else if theBoard[0][1] == Board.Slot.Black && theBoard[1][2] == Board.Slot.Black
+            && theBoard[2][3] == Board.Slot.Black && theBoard[3][4] == Board.Slot.Black
+        {
+            return (true, [12,23,34,45], Slot.Black)
+        }
+        else if theBoard[1][1] == Board.Slot.Black && theBoard[2][2] == Board.Slot.Black
+            && theBoard[3][3] == Board.Slot.Black && theBoard[4][4] == Board.Slot.Black
+        {
+            return (true, [22,33,44,55], Slot.Black)
+        }
+            
+        else if theBoard[2][1] == Board.Slot.Black && theBoard[3][2] == Board.Slot.Black
+            && theBoard[4][3] == Board.Slot.Black && theBoard[5][4] == Board.Slot.Black
+        {
+            return (true, [32,43,54,65], Slot.Black)
+        } else if theBoard[0][0] == Board.Slot.Black && theBoard[1][1] == Board.Slot.Black
+            && theBoard[2][2] == Board.Slot.Black && theBoard[3][3] == Board.Slot.Black
+        {
+            return (true, [11,22,33,44], Slot.Black)
+        }
+        else if theBoard[1][0] == Board.Slot.Black && theBoard[2][1] == Board.Slot.Black
+            && theBoard[3][2] == Board.Slot.Black && theBoard[4][3] == Board.Slot.Black
+        {
+            return (true, [21,32,43,54], Slot.Black)
+        }
+        else if theBoard[2][0] == Board.Slot.Black && theBoard[3][1] == Board.Slot.Black
+            && theBoard[4][2] == Board.Slot.Black && theBoard[5][3] == Board.Slot.Black
+        {
+            return (true, [31,42,53,64], Slot.Black)
+        }
+        // end black checks on diagonal ---------------------------------------------
         
+        // copy paste - check red  for //////// direction
+        if theBoard[3][0] == Board.Slot.Red && theBoard[2][1] == Board.Slot.Red
+            && theBoard[1][2] == Board.Slot.Red && theBoard[0][3] == Board.Slot.Red
+        {
+            return (true, [41,32,23,12], Slot.Red)
+        } else if theBoard[4][0] == Board.Slot.Red && theBoard[3][1] == Board.Slot.Red
+            && theBoard[2][2] == Board.Slot.Red && theBoard[1][3] == Board.Slot.Red
+        {
+            return (true, [51,42,33,24], Slot.Red)
+        }
+        else if theBoard[5][0] == Board.Slot.Red && theBoard[4][1] == Board.Slot.Red
+            && theBoard[3][2] == Board.Slot.Red && theBoard[2][3] == Board.Slot.Red
+        {
+            return (true, [61,52,43,34], Slot.Red)
+        }
+        else if theBoard[3][1] == Board.Slot.Red && theBoard[2][2] == Board.Slot.Red
+            && theBoard[1][3] == Board.Slot.Red && theBoard[0][4] == Board.Slot.Red
+        {
+            return (true, [42,33,24,15], Slot.Red)
+        }
+            
+        else if theBoard[4][1] == Board.Slot.Red && theBoard[3][2] == Board.Slot.Red
+            && theBoard[2][3] == Board.Slot.Red && theBoard[1][4] == Board.Slot.Red
+        {
+            return (true, [52,43,34,25], Slot.Red)
+        } else if theBoard[5][1] == Board.Slot.Red && theBoard[4][2] == Board.Slot.Red
+            && theBoard[3][3] == Board.Slot.Red && theBoard[2][4] == Board.Slot.Red
+        {
+            return (true, [62,53,44,35], Slot.Red)
+        }
+        else if theBoard[3][2] == Board.Slot.Red && theBoard[2][3] == Board.Slot.Red
+            && theBoard[1][4] == Board.Slot.Red && theBoard[0][5] == Board.Slot.Red
+        {
+            return (true, [43,34,25,16], Slot.Red)
+        }
+        else if theBoard[4][2] == Board.Slot.Red && theBoard[3][3] == Board.Slot.Red
+            && theBoard[2][4] == Board.Slot.Red && theBoard[1][5] == Board.Slot.Red
+        {
+            return (true, [53,44,35,26], Slot.Red)
+        }
+            
+        else if theBoard[5][2] == Board.Slot.Red && theBoard[4][3] == Board.Slot.Red
+            && theBoard[3][4] == Board.Slot.Red && theBoard[2][5] == Board.Slot.Red
+        {
+            return (true, [63,54,45,36], Slot.Red)
+        } else if theBoard[3][3] == Board.Slot.Red && theBoard[2][4] == Board.Slot.Red
+            && theBoard[1][5] == Board.Slot.Red && theBoard[0][6] == Board.Slot.Red
+        {
+            return (true, [44,35,26,17], Slot.Red)
+        }
+        else if theBoard[4][3] == Board.Slot.Red && theBoard[3][4] == Board.Slot.Red
+            && theBoard[2][5] == Board.Slot.Red && theBoard[1][6] == Board.Slot.Red
+        {
+            return (true, [54,45,36,27], Slot.Red)
+        }
+        else if theBoard[5][3] == Board.Slot.Red && theBoard[4][4] == Board.Slot.Red
+            && theBoard[3][5] == Board.Slot.Red && theBoard[2][6] == Board.Slot.Red
+        {
+            return (true, [64,55,46,37], Slot.Red)
+        }
         
+        // red for \\\\\\\\\\\\
         
-        
-        
-        
+        if theBoard[0][3] == Board.Slot.Red && theBoard[1][4] == Board.Slot.Red
+            && theBoard[2][5] == Board.Slot.Red && theBoard[3][6] == Board.Slot.Red
+        {
+            return (true, [14,25,36,47], Slot.Red)
+        } else if theBoard[1][3] == Board.Slot.Red && theBoard[2][4] == Board.Slot.Red
+            && theBoard[3][5] == Board.Slot.Red && theBoard[4][6] == Board.Slot.Red
+        {
+            return (true, [24,35,46,57], Slot.Red)
+        }
+        else if theBoard[2][3] == Board.Slot.Red && theBoard[3][4] == Board.Slot.Red
+            && theBoard[4][5] == Board.Slot.Red && theBoard[5][6] == Board.Slot.Red
+        {
+            return (true, [34,45,56,67], Slot.Red)
+        }
+        else if theBoard[0][2] == Board.Slot.Red && theBoard[1][3] == Board.Slot.Red
+            && theBoard[2][4] == Board.Slot.Red && theBoard[3][5] == Board.Slot.Red
+        {
+            return (true, [13,24,35,46], Slot.Red)
+        } //
+            
+        else if theBoard[1][2] == Board.Slot.Red && theBoard[2][3] == Board.Slot.Red
+            && theBoard[3][4] == Board.Slot.Red && theBoard[4][5] == Board.Slot.Red
+        {
+            return (true, [23,34,45,56], Slot.Red)
+        } else if theBoard[2][2] == Board.Slot.Red && theBoard[3][3] == Board.Slot.Red
+            && theBoard[4][4] == Board.Slot.Red && theBoard[5][5] == Board.Slot.Red
+        {
+            return (true, [33,44,55,66], Slot.Red)
+        }
+        else if theBoard[0][1] == Board.Slot.Red && theBoard[1][2] == Board.Slot.Red
+            && theBoard[2][3] == Board.Slot.Red && theBoard[3][4] == Board.Slot.Red
+        {
+            return (true, [12,23,34,45], Slot.Red)
+        }
+        else if theBoard[1][1] == Board.Slot.Red && theBoard[2][2] == Board.Slot.Red
+            && theBoard[3][3] == Board.Slot.Red && theBoard[4][4] == Board.Slot.Red
+        {
+            return (true, [22,33,44,55], Slot.Red)
+        }
+            
+        else if theBoard[2][1] == Board.Slot.Red && theBoard[3][2] == Board.Slot.Red
+            && theBoard[4][3] == Board.Slot.Red && theBoard[5][4] == Board.Slot.Red
+        {
+            return (true, [32,43,54,65], Slot.Red)
+        } else if theBoard[0][0] == Board.Slot.Red && theBoard[1][1] == Board.Slot.Red
+            && theBoard[2][2] == Board.Slot.Red && theBoard[3][3] == Board.Slot.Red
+        {
+            return (true, [11,22,33,44], Slot.Red)
+        }
+        else if theBoard[1][0] == Board.Slot.Red && theBoard[2][1] == Board.Slot.Red
+            && theBoard[3][2] == Board.Slot.Red && theBoard[4][3] == Board.Slot.Red
+        {
+            return (true, [21,32,43,54], Slot.Red)
+        }
+        else if theBoard[2][0] == Board.Slot.Red && theBoard[3][1] == Board.Slot.Red
+            && theBoard[4][2] == Board.Slot.Red && theBoard[5][3] == Board.Slot.Red
+        {
+            return (true, [31,42,53,64], Slot.Red)
+        }
         
         return (false, [], Slot.None)
     }
