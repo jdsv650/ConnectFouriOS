@@ -113,6 +113,82 @@ class Board
         return false
     }
     
+    func checkWin() -> (Bool, [Int], Slot)
+    {
+        // 11,12,13,14,15,16,17    (-1 for index)
+        // 21,22,23,23,25,26,27
+        // 31,32,33,34,35,36,37
+        // 41,42,43,44,45,46,47
+        // 51,52,53,54,55,56,57
+        // 61,62,63,64,65,66,67
+        
+        for i in 0...5
+        {
+            var results = checkHorizontal(i)
+            if results.0 == true
+            {
+                return results
+            }
+            
+        }
+        
+        
+        
+        return (false, [], Slot.None)
+    }
+    
+    func checkHorizontal(row :Int) -> (Bool, [Int], Slot)
+    {
+        // check black
+        if theBoard[row][0] == Board.Slot.Black && theBoard[row][1] == Board.Slot.Black
+          && theBoard[row][2] == Board.Slot.Black && theBoard[row][3] == Board.Slot.Black
+        {
+            return (true, [0,1,2,3], Slot.Black)
+        } else if theBoard[row][1] == Board.Slot.Black && theBoard[row][2] == Board.Slot.Black
+        && theBoard[row][3] == Board.Slot.Black && theBoard[row][4] == Board.Slot.Black
+        {
+            return (true, [1,2,3,4], Slot.Black)
+        }
+        else if theBoard[row][2] == Board.Slot.Black && theBoard[row][3] == Board.Slot.Black
+            && theBoard[row][4] == Board.Slot.Black && theBoard[row][5] == Board.Slot.Black
+        {
+            return (true, [2,3,4,5], Slot.Black)
+        }
+        else if theBoard[row][3] == Board.Slot.Black && theBoard[row][4] == Board.Slot.Black
+            && theBoard[row][5] == Board.Slot.Black && theBoard[row][6] == Board.Slot.Black
+        {
+            return (true, [3,4,5,6], Slot.Black)
+        }
+        
+        // copy paste for red
+        if theBoard[row][0] == Board.Slot.Red && theBoard[row][1] == Board.Slot.Red
+            && theBoard[row][2] == Board.Slot.Red && theBoard[row][3] == Board.Slot.Red
+        {
+            return (true, [0,1,2,3], Slot.Red)
+        } else if theBoard[row][1] == Board.Slot.Red && theBoard[row][2] == Board.Slot.Red
+            && theBoard[row][3] == Board.Slot.Red && theBoard[row][4] == Board.Slot.Red
+        {
+            return (true, [1,2,3,4], Slot.Red)
+        }
+        else if theBoard[row][2] == Board.Slot.Red && theBoard[row][3] == Board.Slot.Red
+            && theBoard[row][4] == Board.Slot.Red && theBoard[row][5] == Board.Slot.Red
+        {
+            return (true, [2,3,4,5], Slot.Red)
+        }
+        else if theBoard[row][3] == Board.Slot.Red && theBoard[row][4] == Board.Slot.Red
+            && theBoard[row][5] == Board.Slot.Red && theBoard[row][6] == Board.Slot.Red
+        {
+            return (true, [3,4,5,6], Slot.Red)
+        }
+        
+        
+        return (false, [], Slot.None)
+    }
+    
+    
+    
+    
+    
     func isFull() -> Bool
     {
         for row in theBoard {
