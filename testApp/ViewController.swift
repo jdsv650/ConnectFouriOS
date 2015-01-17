@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class ViewController: UIViewController {
 
@@ -63,14 +64,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var loc5_4: UIButton!
     @IBOutlet weak var loc5_5: UIButton!
     @IBOutlet weak var loc5_6: UIButton!
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
+//        // Do any additional setup after loading the view.
+//        GKLocalPlayer.localPlayer().authenticateHandler={(var gameCenterVC:UIViewController!, var gameCenterError:NSError!) -> Void in
+//            if gameCenterVC != nil {
+//                //showAuthenticationDialogWhenReasonable: is an example method name. Create your own method that displays an authentication view when appropriate for your app.
+//                //showAuthenticationDialogWhenReasonable(gameCenterVC!)
+//                self.presentViewController(gameCenterVC, animated: true, completion: { () -> Void in
+//                    // no idea
+//                })
+//            }
+//            else if GKLocalPlayer.localPlayer().authenticated == true {
+//                println((GKLocalPlayer.localPlayer().authenticated))
+//
+//            }
+//            
+//            if gameCenterError != nil
+//            { println("Game Center error: \(gameCenterError)")}
+//        }
     }
+    
+
+
 
     @IBAction func buttonPressed(sender: UIButton) {
         // board tags
@@ -166,7 +186,7 @@ class ViewController: UIViewController {
             player = "Player 1"
         }
         
-        var alertVC = UIAlertController(title: "Winner", message: "\(player) wins!", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        var alertVC = UIAlertController(title: "Winner", message: "\(player) wins!", preferredStyle: UIAlertControllerStyle.Alert)
         
         var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
             self.resetGame()
@@ -177,6 +197,8 @@ class ViewController: UIViewController {
            
         }
     }
+    
+    
     
     func resetBackgroundImages()
     {
